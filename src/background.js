@@ -6,7 +6,9 @@ chrome.downloads.onChanged.addListener(function(downloadDelta) {
 				done = false;
 		}
 		if (done) {
-			chrome.browsingData.removeDownloads({});
+			setTimeout(function() {
+				chrome.browsingData.removeDownloads({});
+			}, 3000);
 		}
 	});
 }); 
